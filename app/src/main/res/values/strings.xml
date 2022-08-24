@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">E-Notice Board UMa</string>
+
+    <string name="back4app_server_url" translatable="false">https://parseapi.back4app.com/</string>
+
+    <!-- Change BOTH strings as required -->
+    <string name="back4app_app_id" translatable="false">O7mE7YgW9KePT6XMtvbvSxf1ezRgdxLlUA7vlflV</string>
+    <string name="back4app_client_key" translatable="false">oyfnNnopHAS9sOmkCc6gARzVHyXzCctOYu9mK5ba</string>
+
+    <string name="signin">Login</string>
+    <string name="signup">Create Account</string>
+    <string name="semester_results">Semester Results</string>
+    <string name="title">Title</string>
+    <string name="select_image">select image</string>
+    <string name="add_description_optional">Add description (optional)</string>
+    <string name="post_notice">Post Notice</string>
+    <string name="admin_name">admin name</string>
+    <string name="admin_password">admin password</string>
+    <string name="login">Login</string>
+    <string name="matriculation_no">Matriculation No</string>
+    <string name="your_matricule_xxaxxxxfs">your matricule xxAxxxxFS</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="new_user_sign_up">New user? Sign up</string>
+    <string name="your_full_name">your full name</string>
+    <string name="matriculation_no_e_g_xxaxxxxfs">Matriculation No. e.g: xxAxxxxFS</string>
+    <string name="create_a_password">create a password</string>
+    <string name="_8_or_more_characters">8 or more characters</string>
+    <string name="_1_letter_or_symbol">1 letter or symbol</string>
+    <string name="_1_number">1 number</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="show_password">Show password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_a_user_login">Already a user? Login</string>
+    <string name="results">Results</string>
+    <string name="basic_information">Basic Information</string>
+    <string name="name">Name</string>
+    <string name="program">Program</string>
+    <string name="department">Department</string>
+    <string name="select_academic_year_and_semester_to_get_results">Select academic year and semester to get results</string>
+    <string name="get_result">Get Result</string>
+    <string name="about">E-notice Board UMa is an application to consult the notice board of the University of Maroua.\nIts purpose is to facilitate the flow, authenticity and security of information.\nThis platform also contains a Student Profile which enables students to get their individual exam results.\n
+                        \n©All Rights Reserved. LDdev - @2021
+                        \nBuild using open sources software.\n\n
+                        Provided by @Legendary Dice\uD83C\uDFB2✌\uD83C\uDFFE</string>
+    <string name="are_you_sure">Are you sure you want to Exit?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="exit">Exit</string>
+    <string name="us">About Us!!!</string>
+    <string name="please_wait">Please wait</string>
+    <string name="logg">Logging in....</string>
+    <string name="yaer">Academic Year</string>
+    <string name="semester">Semester</string>
+    <string name="result">Your Results</string>
+   <!-- <string name="please_wait">Please wait</string>-->
+
+    <string-array name="academic_year">
+        <item>Select Academic Year</item>
+        <item>2019/2020</item>
+        <item>2020/2021</item>
+        <item>2021/2022</item>
+    </string-array>
+
+    <string-array name="semester">
+        <item>Select Semester</item>
+        <item>First Semester</item>
+        <item>Second Semester</item>
+        <item>Resit Semester</item>
+    </string-array>
+    <string name="umastudent_nuniversity_of_maroua" translatable="true">UMaStudent\nUniversity of Maroua</string>
+    <string name="login_admin_only">Login (admin only)</string>
+    <string name="student_profile">Student profile</string>
+    <string name="about_us">About Us</string>
+    <string name="your_mat_no">Your Matriculation No. is not recognise by the system</string>
+    <string name="pass_match">password not match</string>
+    <string name="pass_req">password requirement not fulfill</string>
+</resources>

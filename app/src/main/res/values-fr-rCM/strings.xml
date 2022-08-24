@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-Notice Board UMa</string>
+    <string name="signin">Se Connecter</string>
+    <string name="signup">Créer un Compte</string>
+    <string name="semester_results">Résultats du semestre</string>
+    <string name="title">Titre</string>
+    <string name="select_image">Sélectionnez l\'image</string>
+    <string name="add_description_optional">Description</string>
+    <string name="post_notice">Affichez</string>
+    <string name="admin_password">Admin mot de passe</string>
+    <string name="admin_name">Admin nom</string>
+    <string name="login">Se connecter</string>
+    <string name="matriculation_no">Matricule</string>
+    <string name="your_matricule_xxaxxxxfs">matricule xxAxxxxFS</string>
+    <string name="password">Mot de passe</string>
+    <string name="sign_in">Se connecter</string>
+    <string name="new_user_sign_up">Nouvel utilisateur? Enregistrez-vous</string>
+    <string name="your_full_name">Nom complet</string>
+    <string name="matriculation_no_e_g_xxaxxxxfs">Matricule. ex: xxAxxxxFS</string>
+    <string name="create_a_password">Créer un mot de passe</string>
+    <string name="_8_or_more_characters">8 caractères ou plus</string>
+    <string name="_1_letter_or_symbol">1 lettre ou symbole</string>
+    <string name="_1_number">1 nombre</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="show_password">Affichez le mot de passe</string>
+    <string name="sign_up">Enregistrez-vous</string>
+    <string name="already_a_user_login">Déjà un utilisateur? Connectez-vous</string>
+    <string name="results">Résultats</string>
+    <string name="basic_information">Informations de Base</string>
+    <string name="name">Nom</string>
+    <string name="program">Cycle</string>
+    <string name="department">Département</string>
+    <string name="select_academic_year_and_semester_to_get_results">Sélectionnez l\'année académique et le semestre pour obtenir les résultats</string>
+    <string name="get_result">Obtenir le Résultat</string>
+
+    <string name="about">E-notice Board UMa est une application permettant de consulter le babillard de l\'Université de Maroua.
+                        \nSon objectif est de faciliter la circulation, l\'authenticité et la sécurité des informations.
+                        \nCette plateforme contient également un profil étudiant qui permet aux étudiants d\'obtenir leurs résultats individuels aux examens.
+                        \n\n©Tous droits réservés. LDdev - @2021
+                        \nBuild using open sources software.\n\n
+                        Provided by @Legendary Dice\uD83C\uDFB2✌\uD83C\uDFFE</string>
+    <string name="are_you_sure">Vous êtes sûr de vouloir sortir?</string>
+    <string name="yes">OUI</string>
+    <string name="no">NON</string>
+    <string name="exit">Sortir</string>
+    <string name="us">A propos de nous!!!</string>
+    <string name="yaer">Année académique</string>
+    <string name="semester">Semestre</string>
+    <string name="result">Vos Résultats</string>
+
+    <string-array name="academic_year">
+        <item>Sélectionnez l\'année académique</item>
+        <item>2019/2020</item>
+        <item>2020/2021</item>
+        <item>2021/2022</item>
+    </string-array>
+
+    <string-array name="semester">
+        <item>Sélectionnez Semestre</item>
+        <item>Premier Semestre</item>
+        <item>Deuxieme Semestre</item>
+        <item>Semestre de Rattrapage</item>
+    </string-array>
+    <string name="umastudent_nuniversity_of_maroua">UMaStudent\nUniversité de Maroua</string>
+    <string name="login_admin_only">Connexion (administrateur seulement)</string>
+    <string name="student_profile">Profil de l\'étudiant</string>
+    <string name="about_us">A propos de nous</string>
+    <string name="logg">Se connecter</string>
+    <string name="please_wait">Veuillez patienter</string>
+    <string name="your_mat_no">Votre matricule n\'est pas reconnu par le système.</string>
+    <string name="pass_match">le mot de passe ne correspond pas</string>
+    <string name="pass_req">mot de passe non rempli</string>
+</resources>

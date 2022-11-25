@@ -13,17 +13,35 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/uma1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15sp"
-            android:layout_marginRight="10dp"
-            android:text="@string/umastudent_nuniversity_of_maroua"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/uma1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:text="@string/umastudent_nuniversity_of_maroua"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/menu"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="2dp"
+                android:gravity="center"
+                android:background="@drawable/ic_baseline_more_vert_24"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/name"
@@ -93,12 +111,13 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
+                <TextView
                     android:id="@+id/imagebutton"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
+                    android:layout_marginTop="5dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/uma2" />
+                    android:background="@drawable/uma2" />
 
                 <TextView
                     android:layout_width="337dp"
@@ -136,13 +155,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="@string/program"
+                    android:text="@string/matriculation_no"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/prog"
+                    android:id="@+id/mat"
                     android:layout_width="337dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -155,13 +174,71 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="@string/matriculation_no"
+                    android:text="Date of Birth"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/mat"
+                    android:id="@+id/dob"
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/name"
+                    android:textAllCaps="true"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Alternative Email Address"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/name"
+                    android:textAllCaps="true"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Phone No."
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/name"
+                    android:textAllCaps="true"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/program"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/prog"
                     android:layout_width="337dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -186,6 +263,26 @@
                     android:layout_gravity="center"
                     android:text="@string/name"
                     android:textAllCaps="true"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Level"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/level"
+                    android:layout_width="337dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/name"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="20dp"
                     android:textSize="18sp" />
 
             </LinearLayout>

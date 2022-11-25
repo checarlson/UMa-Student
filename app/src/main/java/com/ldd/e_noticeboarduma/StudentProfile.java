@@ -1,23 +1,26 @@
 package com.ldd.e_noticeboarduma;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -29,8 +32,8 @@ import java.util.ArrayList;
 public class StudentProfile extends AppCompatActivity {
     private Spinner yr, sem;
     private ViewFlipper vf;
-    private TextView homeV, resultV;
-    private TextView name1, program, matricule, department, name11;
+    private TextView homeV, resultV, menu;
+    private TextView name1, program, matricule, department, name11, level, phone, email, dob;
     private ArrayList<Results> resultsArrayList;
     private ResultsRVAdapter resultsRVAdapter;
     private RecyclerView resultsRV;
@@ -49,6 +52,7 @@ public class StudentProfile extends AppCompatActivity {
         homeV = findViewById(R.id.home);
         resultV = findViewById(R.id.result);
         get = findViewById(R.id.get);
+        menu = findViewById(R.id.menu);
 
 
         name1 = findViewById(R.id.name);
@@ -56,6 +60,10 @@ public class StudentProfile extends AppCompatActivity {
         program = findViewById(R.id.prog);
         matricule = findViewById(R.id.mat);
         department = findViewById(R.id.dept);
+        level = findViewById(R.id.level);
+        dob = findViewById(R.id.dob);
+        email = findViewById(R.id.email);
+        phone = findViewById(R.id.phone);
 
 
 
@@ -68,6 +76,8 @@ public class StudentProfile extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        showPopupMenu();
     }
 
     private void getStudent() {
@@ -92,18 +102,30 @@ public class StudentProfile extends AppCompatActivity {
                     String program1 = object.getString("Program");
                     String department1 = object.getString("Department");
                     String mat = object.getString("Matricule");
+                    String lev = object.getString("Level");
+                    String dob1 = object.getString("DOB");
+                    String phone1 = object.getString("Phone");
+                    String email1 = object.getString("Email");
 
 
                     student.setName(name);
                     student.setMatricule(mat);
                     student.setDepartment(department1);
                     student.setProgram(program1);
+                    student.setLevel(lev);
+                    student.setEmail(email1);
+                    student.setDob(dob1);
+                    student.setPhone(phone1);
 
                     name1.setText(student.getName()+" ("+student.getMatricule()+")");
                     name11.setText(student.getName());
                     program.setText(student.getProgram());
                     matricule.setText(student.getMatricule());
                     department.setText(student.getDepartment());
+                    level.setText(student.getLevel());
+                    dob.setText(student.getDob());
+                    email.setText(student.getEmail());
+                    phone.setText(student.getPhone());
 
                 }else {
                     // handling error if we get any error.
@@ -191,6 +213,7 @@ public class StudentProfile extends AppCompatActivity {
                 intent.putExtra("mat", student.getMatricule());
                 intent.putExtra("prog", student.getProgram());
                 intent.putExtra("dept", student.getDepartment());
+                intent.putExtra("level", student.getLevel());
                 intent.putExtra("semester", seme);
                 intent.putExtra("year", year);
                 startActivity(intent);
@@ -202,6 +225,70 @@ public class StudentProfile extends AppCompatActivity {
 
         });
     }
+
+  private void showPopupMenu(){
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu(StudentProfile.this, menu);
+                MenuInflater inflater = popup.getMenuInflater();
+                inflater.inflate(R.menu.main_menu, popup.getMenu());
+
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.about:
+                                AlertDialog.Builder about = new AlertDialog.Builder(StudentProfile.this);
+                                AlertDialog.Builder builder = about.setMessage(R.string.about)
+                                        .setCancelable(true)
+                                        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                            }
+                                        });
+
+                                AlertDialog alert1 = about.create();
+                                alert1.setTitle(R.string.us);
+                                alert1.show();
+                                break;
+
+                            case R.id.exit:
+                                AlertDialog.Builder a_builder = new AlertDialog.Builder(StudentProfile.this);
+                                AlertDialog.Builder builder1 = a_builder.setMessage(R.string.are_you_sure)
+                                        .setCancelable(false)
+                                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        })
+                                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.cancel();
+                                            }
+                                        });
+
+                                AlertDialog alert = a_builder.create();
+                                alert.setTitle(R.string.exit);
+                                alert.show();
+                                break;
+
+                            default:
+                                return false;
+
+                        }
+
+                        return true;
+                    }
+                });
+                popup.show();
+            }
+        });
+
+  }
 
     @Override
     public void onBackPressed() {

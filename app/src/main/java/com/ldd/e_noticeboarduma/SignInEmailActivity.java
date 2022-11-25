@@ -38,11 +38,13 @@ public class SignInEmailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in_email);
 
 
-        this.setTitle(R.string.signin);
+//        this.setTitle(R.string.signin);
+
+//        getSupportActionBar().hide();
 
 
         btnContinue = findViewById(R.id.btnSignIn);
-        matricule = findViewById(R.id.email);
+        matricule = findViewById(R.id.mat);
         password = findViewById(R.id.pass);
         signUp = findViewById(R.id.clicksign);
 
@@ -115,12 +117,14 @@ public class SignInEmailActivity extends AppCompatActivity {
                     String program = object.getString("Program");
                     String department = object.getString("Department");
                     String mat = object.getString("Matricule");
+                    String level = object.getString("Level");
 
                     Student student = new Student();
                     student.setName(name);
                     student.setMatricule(mat);
                     student.setDepartment(department);
                     student.setProgram(program);
+                    student.setLevel(level);
                     Utility.mat = mat;
 
                     Intent intent = new Intent(getApplicationContext(), StudentProfile.class);

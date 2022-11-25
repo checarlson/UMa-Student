@@ -1,171 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:focusableInTouchMode="true"
-        tools:ignore="UselessParent">
-
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/create"
+            android:id="@+id/u1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="9dp"
-            android:layout_marginRight="9dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:background="@color/midnightblue"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/first"
-                android:layout_width="321dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/edittext_frame"
-                android:hint="@string/your_full_name"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <EditText
-                android:id="@+id/emailAddress"
-                android:layout_width="321dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/edittext_frame"
-                android:ems="10"
-                android:hint="@string/matriculation_no_e_g_xxaxxxxfs"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                tools:ignore="TextFields" />
-
             <TextView
-                android:id="@+id/passWarn"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="9dp"
-                android:gravity="center_vertical" />
-
-
-            <EditText
-                android:id="@+id/createPass"
-                android:layout_width="321dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/edittext_frame"
-                android:ems="10"
-                android:hint="@string/create_a_password"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:visibility="visible" />
-
-            <CheckBox
-                android:id="@+id/character"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginLeft="4dp"
-                android:clickable="false"
-                android:text="@string/_8_or_more_characters"
-                android:layout_marginStart="4dp" />
-
-            <CheckBox
-                android:id="@+id/letersymb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginLeft="4dp"
-                android:clickable="false"
-                android:text="@string/_1_letter_or_symbol"
-                android:layout_marginStart="4dp" />
-
-            <CheckBox
-                android:id="@+id/number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginLeft="4dp"
-                android:clickable="false"
-                android:text="@string/_1_number"
-                android:layout_marginStart="4dp" />
-
-            <TextView
-                android:id="@+id/Warn"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:gravity="center_vertical" />
-
-            <EditText
-                android:id="@+id/confirmPass"
-                android:layout_width="328dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/edittext_frame"
-                android:ems="10"
-                android:hint="@string/confirm_password"
-                android:inputType="textPassword"
-                android:minHeight="48dp" />
+                android:background="@drawable/umalogo"/>
 
             <TextView
-                android:id="@+id/passMatchWarn"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_gravity="center|start"
-                android:layout_marginBottom="5dp"
-                android:gravity="start|center_vertical" />
-
-            <CheckBox
-                android:id="@+id/showPass"
-                android:layout_width="343dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:checked="false"
-                android:text="@string/show_password" />
-
-            <android.widget.Button
-                android:id="@+id/register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_idle"
                 android:gravity="center"
-                android:text="@string/sign_up"
-                android:textAllCaps="false" />
-
-
-            <TextView
-                android:id="@+id/clicksin"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/button_idle1"
-                android:text="@string/already_a_user_login"
+                android:text="The University of Maroua"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter your personal details to create an account"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="italic"/>
+
         </LinearLayout>
 
-    </ScrollView>
 
-</RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:focusableInTouchMode="true"
+            android:layout_below="@id/u1"
+            tools:ignore="UselessParent">
+
+
+            <LinearLayout
+                android:id="@+id/create"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/mat"
+                    android:layout_width="321dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edittext_frame"
+                    android:ems="10"
+                    android:paddingLeft="10dp"
+                    android:hint="@string/matriculation_no_e_g_xxaxxxxfs"
+                    android:inputType="textPersonName|textCapCharacters"
+                    android:minHeight="48dp"
+                    tools:ignore="TextFields" />
+
+                <EditText
+                    android:id="@+id/dob"
+                    android:layout_width="321dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittext_frame"
+                    android:hint="Date of Birth"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="321dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittext_frame"
+                    android:hint="Alternative Email Address"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="321dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edittext_frame"
+                    android:hint="Telephone No. (+237)"
+                    android:inputType="textPersonName|textCapSentences"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/passWarn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="9dp"
+                    android:gravity="center_vertical" />
+
+
+                <EditText
+                    android:id="@+id/createPass"
+                    android:layout_width="321dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edittext_frame"
+                    android:ems="10"
+                    android:paddingLeft="10dp"
+                    android:hint="@string/create_a_password"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:visibility="visible" />
+
+                <CheckBox
+                    android:id="@+id/character"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="4dp"
+                    android:clickable="false"
+                    android:text="@string/_8_or_more_characters"
+                    android:layout_marginStart="4dp" />
+
+                <CheckBox
+                    android:id="@+id/letersymb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="4dp"
+                    android:clickable="false"
+                    android:text="@string/_1_letter_or_symbol"
+                    android:layout_marginStart="4dp" />
+
+                <CheckBox
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="4dp"
+                    android:clickable="false"
+                    android:text="@string/_1_number"
+                    android:layout_marginStart="4dp" />
+
+                <TextView
+                    android:id="@+id/Warn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_vertical" />
+
+                <EditText
+                    android:id="@+id/confirmPass"
+                    android:layout_width="328dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edittext_frame"
+                    android:ems="10"
+                    android:paddingLeft="10dp"
+                    android:hint="@string/confirm_password"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/passMatchWarn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start|center_vertical" />
+
+                <CheckBox
+                    android:id="@+id/showPass"
+                    android:layout_width="343dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:checked="false"
+                    android:text="@string/show_password" />
+
+                <android.widget.Button
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_idle"
+                    android:gravity="center"
+                    android:text="@string/sign_up"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/clicksin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/button_idle1"
+                    android:text="@string/already_a_user_login"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>

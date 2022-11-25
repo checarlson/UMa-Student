@@ -133,14 +133,17 @@ public class NoticeActivity extends AppCompatActivity {
     }
 
 
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+*/
 
 
+/*
  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -199,6 +202,7 @@ public class NoticeActivity extends AppCompatActivity {
 
         return true;
     }
+*/
 
     private void swipe(){
         // Refresh  the layout

@@ -7,17 +7,48 @@ public class Student {
     private String department;
     private String program;
     private String level;
+    private String dob;
+    private String email;
+    private String phone;
+
 
     public Student() {
     }
 
-    public Student(String name, String matricule, String password, String department, String program, String level) {
+    public Student(String name, String matricule, String password, String department, String program, String level, String dob, String email, String phone) {
         this.name = name;
         this.matricule = matricule;
         this.password = password;
         this.department = department;
         this.program = program;
         this.level = level;
+        this.dob = dob;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getName() {

@@ -1,9 +1,12 @@
 package com.ldd.e_noticeboarduma;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
@@ -16,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +32,12 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * This class is use to create an account
  */
@@ -35,10 +45,11 @@ import com.parse.SaveCallback;
 public class SignUpActivity extends AppCompatActivity {
 
     public static TextView passwarn, warn, passmatch, termsAndPrivacy, dlogo;
-    public static EditText pass, pass1, email, etname, lname;
+    public static EditText pass, pass1, mat, dob, email, phone;
     public static Button vBtn;
     public static CheckBox show, num, letter, xter;
     private TextView signIn;
+    DatePickerDialog.OnDateSetListener mOnSetListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,14 +57,18 @@ public class SignUpActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_sign_up);
 
-        this.setTitle(R.string.signup);
+//        this.setTitle(R.string.signup);
+
+//        getSupportActionBar().hide();
 
         passwarn = findViewById(R.id.Warn);
         pass = findViewById(R.id.createPass);
         pass1 = findViewById(R.id.confirmPass);
         warn = findViewById(R.id.passWarn);
-        email = findViewById(R.id.emailAddress);
-        etname = findViewById(R.id.first);
+        mat = findViewById(R.id.mat);
+        dob = findViewById(R.id.dob);
+        email = findViewById(R.id.email);
+        phone = findViewById(R.id.phone);
         vBtn = findViewById(R.id.register);
         passmatch = findViewById(R.id.passMatchWarn);
         show = findViewById(R.id.showPass);
@@ -64,10 +79,15 @@ public class SignUpActivity extends AppCompatActivity {
         signIn = findViewById(R.id.clicksin);
 
 
+        dob.setFocusable(false);
+        dob.setClickable(true);
+
+
         handler();
         verifyEmail();
         showPassword();
         signup();
+        pickDob();
     }
 
 
@@ -155,6 +175,33 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+   private void pickDob(){
+       Calendar cal = Calendar.getInstance();
+       int day = cal.get(Calendar.DAY_OF_MONTH);
+       int month = cal.get(Calendar.MONTH);
+       int year = cal.get(Calendar.YEAR);
+        dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog dialog = new DatePickerDialog(SignUpActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth, mOnSetListener, year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+       mOnSetListener = new DatePickerDialog.OnDateSetListener() {
+           @Override
+           public void onDateSet(DatePicker datePicker, int y, int m, int d) {
+               m = m + 1;
+
+               String input = "";
+               input = String.format("%02d/%02d/%04d", d, m, y);
+               dob.setText(input);
+           }
+       };
+
+   }
+
     /**
      * this method compare the 2 passwords provided by the user if they match
      * @param pass1; the first password
@@ -195,8 +242,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void registerStudent() throws Exception {
-        String name = etname.getText().toString();
-        String matricule = email.getText().toString();
+        String mail = email.getText().toString();
+        String matricule = mat.getText().toString();
+        String birth = dob.getText().toString();
+        String number = phone.getText().toString();
         String password = pass.getText().toString();
 
         String Pass1 = pass.getText().toString();
@@ -204,25 +253,12 @@ public class SignUpActivity extends AppCompatActivity {
 
         String pass1 = Utility.encrypt(password, Utility.en_pass);
 
-         /*if (Utility.isEmailValid(Email)) {
-            Toast.makeText(getApplicationContext(), "Valid Email Address.", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "InValid Email Address.", Toast.LENGTH_SHORT).show();
-            warn.setText("wrong or invalid email");
-        }*/
 
-       /* if (passwordMatch(Pass1, Pass2) && Pass1.length() >= 8 && checkPassword(xter, num, letter)) {
-            Toast.makeText(getApplicationContext(), "Passwords okay", Toast.LENGTH_SHORT).show();
-        } else if(!passwordMatch(Pass1, Pass2)) {
-            passmatch.setText(R.string.pass_match);
-        } else if (passwordMatch(Pass1, Pass2) && Pass1.length() < 8 && !checkPassword(xter, num, letter)) {
-            passmatch.setText(R.string.pass_req);
-        }*/
-
-        if (!name.isEmpty() && !matricule.isEmpty() && !password.isEmpty() && passwordMatch(Pass1, Pass2) && checkPassword(xter, num, letter)) {
+        if (!birth.isEmpty() && !matricule.isEmpty() && !mail.isEmpty() && !number.isEmpty() && !password.isEmpty() && passwordMatch(Pass1, Pass2) && checkPassword(xter, num, letter)) {
 
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Students");
             query.whereEqualTo("Matricule", matricule);
+            query.whereEqualTo("DOB", birth);
             query.getFirstInBackground(new GetCallback<ParseObject>() {
                 @Override
                 public void done(ParseObject object, ParseException e) {
@@ -233,7 +269,8 @@ public class SignUpActivity extends AppCompatActivity {
                             public void done(ParseObject object, ParseException e) {
                                 if (e == null) {
                                     // adding our data with their key value in our object.
-                                    object.put("Name", name);
+                                    object.put("Email", mail);
+                                    object.put("Phone", number);
                                     object.put("Password", pass1);
 
 
@@ -273,8 +310,10 @@ public class SignUpActivity extends AppCompatActivity {
             });
 
         }else {
-            etname.setError("required");
+            mat.setError("required");
             email.setError("required");
+            dob.setError("required");
+            phone.setError("required");
             pass.setError("required");
         }
     }
